@@ -39,7 +39,7 @@ func _process(_delta):
 	r = r.grow_individual(margin.x, margin.y, margin.x, margin.y)
 	# var d = max(r.size.x, r.size.y)
 	var z
-	if r.size > r.size.y * screen_size.aspect():
+	if r.size.x > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.x, min_zoom, max_zoom)
 	else:
 		z = clamp(r.size.y / screen_size.y, min_zoom, max_zoom)
