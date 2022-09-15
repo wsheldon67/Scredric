@@ -1,0 +1,22 @@
+* Level Editor
+Some root folder for level elements
+** Tiles
+Static tilemaps
+** Entities
+Dynamic level things
+** Mobs
+Enemies / NPCs
+** Game
+PlayerStart, LevelEnd
+*** Weapons
+*** Buffs / Bonuses
+
+* Levels
+flat level structure
+
+* Assets
+** Player
+** Mobs
+** 
+
+* Main.tscn

@@ -1,0 +1,77 @@
+* Initial Menu
+** Start
+1. Start Game
+2. Add players? / continue
+3. Load or overwrite save
+  - If new game, choose difficulty
+4. Game starts at level1 or loaded level
+*** Add players
+1. Click next players' start button
+2. Show visually different player
+** Settings
+*** Input Map
+For each of up to 4 players
+1. Find control
+2. Click button to set
+3. Set control to next clicked button
+*** Ideas
+Graphics quality
+** Quit
+
+* Level
+Camera keeps all players in view
+** Unlocks
+Unlock for all players
+Saved on level completion
+*** Weapons
+Switch to new weapon
+Display weapon in hotbar
+Mk II replaces MK I, does not get added as new
+*** Increased Health
+*** Weapon Combinator
+New screen at beginning of each level
+1. Select 2 weapons
+2. Click combine
+3. Click start
+Combo weapon replaces both number slots
+Only the existence of the Combinator option is saved
+ - not the combined weapons, which are choosen for each level start
+** Hints
+Display hints anchored to the level
+Triggered by events
+** Level End
+Display congratulations & stats
+Assure that the level was saved
+Button to continue to next level
+** Enemies
+*** Difficulty Scale
+All placed enemies take a diffculty scale
+ - increased damage, health
+ - swarm: increased count
+ - optional, high-difficulty attack
+Increased for each player playing
+Increased based on requested difficulty in settings
+*** Death
+Add to enemies defeated count
+
+
+* Hud
+** Hotbar
+Shows unlocked weapons
+Located at top
+** Per Player
+Shows individual player stats
+ - Health
+Located at bottom
+** Team Stats
+Shows team stats
+ - Money
+ - Enemies killed/remaining
+Located top-right
+
+* Pause Menu
+** Settings
+*** Input Map
+See above
+** Quit
+Warning that this will start the current level over

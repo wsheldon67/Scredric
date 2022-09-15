@@ -1,0 +1,8 @@
+* How To
+Inherited scene? Attach new script that extends/inherits parent script
+
+* Principles
+"Do it right" - anticipate & implement full features
+** Node Creation
+Set collision layers off the bat
+Use groups
