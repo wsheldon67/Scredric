@@ -21,7 +21,7 @@ func remove_target(t):
 		targets.remove(t)
 
 
-func _process(delta):
+func _process(_delta):
 	if !targets:
 		return
 	
@@ -37,7 +37,7 @@ func _process(delta):
 	for target in targets:
 		r = r.expand(target.position)
 	r = r.grow_individual(margin.x, margin.y, margin.x, margin.y)
-	var d = max(r.size.x, r.size.y)
+	# var d = max(r.size.x, r.size.y)
 	var z
 	if r.size > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.x, min_zoom, max_zoom)
