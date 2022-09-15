@@ -21,6 +21,8 @@ flat level structure
 ** Environment
 ** Game Entities
 
+* Menus
+
 * Main.tscn
 ** Menu
 *** Current Menu
