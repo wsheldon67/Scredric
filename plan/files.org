@@ -2,11 +2,11 @@
 Some root folder for level elements
 ** Tiles
 Static tilemaps
-** Entities
+** Environment
 Dynamic level things
 ** Mobs
 Enemies / NPCs
-** Game
+** Game Entities
 PlayerStart, LevelEnd
 *** Weapons
 *** Buffs / Bonuses
@@ -17,6 +17,8 @@ flat level structure
 * Assets
 ** Player
 ** Mobs
-** 
+** Tiles
+** Environment
+** Game Entities
 
 * Main.tscn
