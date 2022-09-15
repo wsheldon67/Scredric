@@ -18,6 +18,7 @@ func _ready():
 
 func _on_Load_pressed():
 	PROGRESS.data = save_data
+	MENU.hide()
 	WORLD.change_level(save_data.current_level)
 
 
@@ -29,5 +30,6 @@ func _on_Hard_pressed():
 	start_game()
 
 func start_game():
+	PROGRESS.save_slot = save_number
 	MENU.hide()
 	WORLD.change_level("Level 1")

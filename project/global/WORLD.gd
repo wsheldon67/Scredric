@@ -6,7 +6,7 @@ func change_level(level_name):
 func _change_level(level_name):
 	var level_parent = get_node("/root/Main/World/Level")
 	# Delete existing level
-	level_parent.remove_child(get_child(0))
+	level_parent.remove_child(level_parent.get_child(0))
 	# Load new level
 	var new_level = ResourceLoader.load("res://levels/%s.tscn" % level_name).instance()
 	level_parent.add_child(new_level)
