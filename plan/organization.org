@@ -25,7 +25,9 @@ flat level structure
 
 * Main.tscn
 ** Menu
-*** Current Menu
+Current Menu
 ** World
-*** Current Level
-
+*** Level
+Current Level
+*** Players
+Current players

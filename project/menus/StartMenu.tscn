@@ -1,3 +1,47 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/Ubuntu-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menus/assets/StartMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
 
 [node name="StartMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Start" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -83.5
+margin_top = 64.0
+margin_right = 83.5
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+
+[node name="Settings" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.0
+margin_top = -39.5
+margin_right = 134.0
+margin_bottom = 39.5
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+
+[node name="Quit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -83.5
+margin_top = -143.0
+margin_right = 83.5
+margin_bottom = -64.0
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

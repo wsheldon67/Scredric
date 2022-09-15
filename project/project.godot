@@ -14,6 +14,10 @@ config/name="Scredric"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Menu="*res://global/Menu.gd"
+
 [display]
 
 window/size/width=960
