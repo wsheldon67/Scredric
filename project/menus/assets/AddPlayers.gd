@@ -3,7 +3,7 @@ extends CanvasLayer
 
 
 func _on_Back_pressed():
-	Menu.change_menu("StartMenu")
+	MENU.change_menu("StartMenu")
 
 
 func _on_player_added(player_number):
@@ -11,7 +11,8 @@ func _on_player_added(player_number):
 	if player_number < 4:
 		var next_player = get_node("./BlankPlayer%s" % str(player_number+1))
 		next_player.enable()
+		WORLD.add_player()
 
 
 func _on_Ready_pressed():
-	Menu.change_menu("SelectSave")
+	MENU.change_menu("SelectSave")
