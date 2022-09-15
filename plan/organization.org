@@ -22,3 +22,8 @@ flat level structure
 ** Game Entities
 
 * Main.tscn
+** Menu
+*** Current Menu
+** World
+*** Current Level
+

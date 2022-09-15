@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Main" type="Node"]
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="World" type="Node" parent="."]
