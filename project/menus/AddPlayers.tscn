@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/fonts/Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://menus/assets/AddPlayers.gd" type="Script" id=2]
+[ext_resource path="res://menus/assets/BlankPlayer.tscn" type="PackedScene" id=3]
 
 [node name="AddPlayers" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -16,6 +17,7 @@ margin_top = -64.0
 margin_right = 53.5
 margin_bottom = -16.0
 custom_fonts/font = ExtResource( 1 )
+disabled = true
 text = "Ready"
 
 [node name="Back" type="Button" parent="."]
@@ -26,4 +28,24 @@ margin_right = 107.0
 custom_fonts/font = ExtResource( 1 )
 text = "Back"
 
+[node name="BlankPlayer1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, 128 )
+disabled = false
+
+[node name="BlankPlayer2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 128 )
+player_number = 2
+
+[node name="BlankPlayer3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, 334 )
+player_number = 3
+
+[node name="BlankPlayer4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 334 )
+player_number = 4
+
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="player_added" from="BlankPlayer1" to="." method="_on_player_added"]
+[connection signal="player_added" from="BlankPlayer2" to="." method="_on_player_added"]
+[connection signal="player_added" from="BlankPlayer3" to="." method="_on_player_added"]
+[connection signal="player_added" from="BlankPlayer4" to="." method="_on_player_added"]

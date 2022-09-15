@@ -73,5 +73,7 @@ Located top-right
 ** Settings
 *** Input Map
 See above
+** Add Player
+Resets current level
 ** Quit
 Warning that this will start the current level over
