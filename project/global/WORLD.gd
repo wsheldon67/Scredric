@@ -7,7 +7,7 @@ func change_level(level_name):
 	var current_level = level_parent.get_child(0)
 	current_level.queue_free()
 	# Load new level
-	var new_level = ResourceLoader.load("res://levels/%s.tscn" % level_name).instsance()
+	var new_level = ResourceLoader.load("res://levels/%s.tscn" % level_name).instance()
 	level_parent.add_child(new_level)
 
 func add_player():

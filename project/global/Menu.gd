@@ -13,7 +13,7 @@ func _change_menu(menu_name):
 	menu_parent.add_child(new_menu)
 
 func hide():
-	menu_parent.visible = false
+	menu_parent.get_child(0).visible = false
 
 func show():
-	menu_parent.visible = true
+	menu_parent.get_child(0).visible = true
