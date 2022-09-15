@@ -29,4 +29,5 @@ func _on_Hard_pressed():
 	start_game()
 
 func start_game():
+	MENU.hide()
 	WORLD.change_level("Level 1")

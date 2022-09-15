@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 403.0
+margin_top = 257.0
+margin_right = 513.0
+margin_bottom = 294.0
+text = "Level 1"
