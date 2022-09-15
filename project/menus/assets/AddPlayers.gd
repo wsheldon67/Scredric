@@ -14,4 +14,4 @@ func _on_player_added(player_number):
 
 
 func _on_Ready_pressed():
-	pass # Replace with function body.
+	Menu.change_menu("SelectSave")

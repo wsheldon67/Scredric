@@ -44,6 +44,7 @@ player_number = 3
 position = Vector2( 704, 334 )
 player_number = 4
 
+[connection signal="pressed" from="Ready" to="." method="_on_Ready_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="player_added" from="BlankPlayer1" to="." method="_on_player_added"]
 [connection signal="player_added" from="BlankPlayer2" to="." method="_on_player_added"]

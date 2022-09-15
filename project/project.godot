@@ -16,7 +16,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Menu="*res://global/Menu.gd"
+MENU="*res://global/MENU.gd"
+PROGRESS="*res://global/PROGRESS.gd"
+WORLD="*res://global/WORLD.gd"
 
 [display]
 
@@ -29,6 +31,7 @@ window/stretch/aspect="expand"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom_font="res://assets/fonts/Bold.tres"
 
 [input]
 
