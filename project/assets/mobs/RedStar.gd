@@ -5,22 +5,14 @@ var damage = 1
 export var speed_mod = 1
 export var direction = 1
 
-var drifting = Vector2(0, 0)
-
 func _physics_process(delta):
 	if !active:
 		return
 	var player_position = position
 	var closest_player = WORLD.get_closest_player(position)
 	if closest_player:
-		drifting = Vector2(0, 0)
 		player_position = closest_player.position
 	else:
-		if !drifting:
-			drifting.x = rand_range(-1, 1)
-			drifting.y = rand_range(-1, 1)
-		position.x += drifting.x * speed * delta
-		position.y += drifting.y * speed * delta
 		return
 	var m = direction * speed_mod
 	if player_position.x > position.x:
