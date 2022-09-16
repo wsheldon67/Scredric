@@ -31,8 +31,18 @@ func take_hit(damage):
 func die():
 	# TODO make dead sprite
 	dead = true
+	if all_players_are_dead():
+		WORLD.game_over()
+		return
 	$RespawnTimer.start()
 	$RespawnDisplay.visible = true
+
+
+func all_players_are_dead():
+	for player in get_tree().get_nodes_in_group("players"):
+		if player.dead == false:
+			return false
+	return true
 
 func _physics_process(delta):
 	if dead:

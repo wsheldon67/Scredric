@@ -38,3 +38,28 @@ func get_closest_player(target_position):
 
 func _ready():
 	get_tree().paused = true
+
+
+func game_over():
+	MENU.change_menu("GameOver")
+	MENU.show()
+
+func restart_level():
+	
+	# reset progress
+	var save_file = "user://savegame%s.save" % PROGRESS.save_slot
+	var save_game = File.new()
+	if save_game.file_exists(save_file):
+		save_game.open(save_file, File.READ)
+		var save_data = parse_json(save_game.get_line())
+		PROGRESS.data = save_data
+	else:
+		PROGRESS.data = PROGRESS.initial
+	
+	# reset players
+	for player in get_tree().get_nodes_in_group("players"):
+		player.reset_stats()
+		player.dead = false
+	
+	# reload level
+	change_level(PROGRESS.data.current_level)

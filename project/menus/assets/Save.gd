@@ -15,7 +15,6 @@ func _ready():
 		$Label.text = save_data.current_level
 
 
-
 func _on_Load_pressed():
 	PROGRESS.data = save_data
 	MENU.hide()
@@ -31,6 +30,7 @@ func _on_Hard_pressed():
 
 func start_game():
 	PROGRESS.save_slot = save_number
+	PROGRESS.data = PROGRESS.initial
 	MENU.hide()
 	WORLD.change_level("Level 1")
 	get_tree().paused = false

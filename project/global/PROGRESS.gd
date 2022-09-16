@@ -2,7 +2,7 @@ extends Node
 
 var save_slot = 1
 
-var data = {
+var initial = {
 	"current_level": "Level 1",
 	"chosen_difficulty": 0,
 	"weapons": {
@@ -13,6 +13,7 @@ var data = {
 		"extra_health": 0
 	}
 }
+var data = initial
 
 func save():
 	var save_game = File.new()
