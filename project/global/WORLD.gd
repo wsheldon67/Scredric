@@ -24,6 +24,7 @@ func add_player():
 	var camera = get_node("/root/Main/MultiCamera")
 	camera.add_target(player)
 
+
 func get_closest_player(target_position):
 	var players = get_tree().get_nodes_in_group("players")
 	var closest = players[0]
@@ -36,6 +37,7 @@ func get_closest_player(target_position):
 		return false
 	return closest
 
+
 func _ready():
 	get_tree().paused = true
 
@@ -43,6 +45,7 @@ func _ready():
 func game_over():
 	MENU.change_menu("GameOver")
 	MENU.show()
+
 
 func restart_level():
 	
