@@ -16,6 +16,8 @@ func _ready():
 
 func _process(_delta):
 	# maybe optimize this later if its a problem
+	if active:
+		return
 	var closest = WORLD.get_closest_player(position)
 	if closest and closest.position.distance_to(position) < spawn_distance:
 		active = true
