@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://global/MENU.gd" type="Script" id=1]
 [ext_resource path="res://menus/StartMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/game/MultiCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/game/HUD.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node"]
 pause_mode = 2
@@ -21,6 +22,8 @@ pause_mode = 1
 [node name="Title" parent="World/Level" instance=ExtResource( 3 )]
 
 [node name="Players" type="Node" parent="World"]
+
+[node name="HUD" parent="World" instance=ExtResource( 5 )]
 
 [node name="MultiCamera" parent="." instance=ExtResource( 4 )]
 current = true

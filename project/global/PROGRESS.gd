@@ -23,3 +23,8 @@ func save():
 func get_difficulty():
 	var num_of_players = get_tree().get_nodes_in_group("players").size()
 	return data.chosen_difficulty + num_of_players
+
+
+func unlock(unlock_type, unlock_name, level):
+	data[unlock_type][unlock_name] = level
+	HUD.unlock(unlock_type, unlock_name, level)

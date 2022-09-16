@@ -64,5 +64,8 @@ func restart_level():
 		player.reset_stats()
 		player.dead = false
 	
+	# reset HUD
+	HUD.reset()
+	
 	# reload level
 	change_level(PROGRESS.data.current_level)

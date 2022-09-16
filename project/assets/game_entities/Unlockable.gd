@@ -11,7 +11,7 @@ func _on_Unlockable_body_entered(body):
 
 
 func unlock():
-	PROGRESS.data[unlock_type][unlock_name] = level
+	PROGRESS.unlock(unlock_type, unlock_name, level)
 	$Cage.queue_free()
 	$GunSprite.queue_free()
 	# maybe some hotbar stuff

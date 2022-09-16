@@ -24,6 +24,7 @@ func reset_stats():
 
 func take_hit(damage):
 	health -= damage
+	HUD.take_hit(player_number, health)
 	if health <= 0:
 		die()
 
