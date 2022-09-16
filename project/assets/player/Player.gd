@@ -74,5 +74,6 @@ func revive():
 	$RespawnTimer.stop()
 	starting_spawn_timer += spawn_increase
 	spawn_timer = starting_spawn_timer
+	health = max_health
 	dead = false
 	
