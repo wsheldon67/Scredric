@@ -20,7 +20,7 @@ func _on_Load_pressed():
 	PROGRESS.data = save_data
 	MENU.hide()
 	WORLD.change_level(save_data.current_level)
-
+	get_tree().paused = false
 
 
 func _on_Easy_pressed():
@@ -33,3 +33,4 @@ func start_game():
 	PROGRESS.save_slot = save_number
 	MENU.hide()
 	WORLD.change_level("Level 1")
+	get_tree().paused = false

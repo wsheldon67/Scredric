@@ -35,3 +35,6 @@ func get_closest_player(target_position):
 	if closest.dead:
 		return false
 	return closest
+
+func _ready():
+	get_tree().paused = true
