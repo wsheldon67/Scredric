@@ -7,19 +7,36 @@ var speed = 200
 var jump_force = 640
 var gravity = 1200
 
-var vel = Vector2()
-
 # stats
 var max_health = 3
 var health = 3
 
+# function
+var vel = Vector2()
+var dead = false
+var spawn_increase = 5
+var starting_spawn_timer = 5
+var spawn_timer = starting_spawn_timer
 
 func reset_stats():
 	health = max_health
 
 
+func take_hit(damage):
+	health -= damage
+	if health <= 0:
+		die()
+
+
+func die():
+	# TODO make dead sprite
+	dead = true
+	$RespawnTimer.start()
+	$RespawnDisplay.visible = true
+
 func _physics_process(delta):
-	
+	if dead:
+		return
 	# reset horizontal velocity
 	vel.x = 0
 	
@@ -45,3 +62,17 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = true
 	if vel.x > 0:
 		$AnimatedSprite.flip_h = false
+
+func _on_RespawnTimer_timeout():
+	$RespawnDisplay.text = str(spawn_timer)
+	spawn_timer -= 1
+	if spawn_timer < 0:
+		revive()
+
+func revive():
+	$RespawnDisplay.visible = false
+	$RespawnTimer.stop()
+	starting_spawn_timer += spawn_increase
+	spawn_timer = starting_spawn_timer
+	dead = false
+	

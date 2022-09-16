@@ -44,6 +44,8 @@ Display congratulations & stats
 Assure that the level was saved
 Button to continue to next level
 ** Enemies
+*** Spawn
+Enemies spawn when a player is within a certain distance.
 *** Difficulty Scale
 All placed enemies take a diffculty scale
  - increased damage, health
@@ -53,6 +55,8 @@ Increased for each player playing
 Increased based on requested difficulty in settings
 *** Death
 Add to enemies defeated count
+** Player Death
+Increasing respawn timer
 
 
 * Hud

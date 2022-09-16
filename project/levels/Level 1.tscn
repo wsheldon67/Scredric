@@ -26,3 +26,7 @@ next_level = "Level 2"
 
 [node name="RedStar" parent="." instance=ExtResource( 4 )]
 position = Vector2( 787, 163 )
+
+[node name="RedStar2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1212, 131 )
+min_difficulty = 2

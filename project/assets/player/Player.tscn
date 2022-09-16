@@ -16,6 +16,7 @@ radius = 18.0
 height = 28.0
 
 [node name="Player" type="KinematicBody2D" groups=["players"]]
+collision_layer = 22
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -23,3 +24,15 @@ frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="RespawnTimer" type="Timer" parent="."]
+
+[node name="RespawnDisplay" type="Label" parent="."]
+visible = false
+margin_left = -10.0
+margin_top = -24.0
+margin_right = 10.0
+margin_bottom = 13.0
+text = "5"
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]

@@ -18,3 +18,7 @@ func save():
 	var save_game = File.new()
 	save_game.open("user://savegame%s.save" % str(save_slot), File.WRITE)
 	save_game.store_line(to_json(data))
+
+func get_difficulty():
+	var num_of_players = get_tree().get_nodes_in_group("players").size()
+	return data.chosen_difficulty + num_of_players

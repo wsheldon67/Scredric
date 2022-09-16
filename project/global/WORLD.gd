@@ -27,7 +27,10 @@ func get_closest_player(target_position):
 	var players = get_tree().get_nodes_in_group("players")
 	var closest = players[0]
 	for player in players:
-		if player.position.distance_to(target_position) < closest.position.distance_to(target_position):
+		var curr_dist = player.position.distance_to(target_position)
+		var prev_closest = closest.position.distance_to(target_position)
+		if curr_dist < prev_closest and !player.dead:
 			closest = player
-	
+	if closest.dead:
+		return false
 	return closest

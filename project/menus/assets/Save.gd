@@ -26,7 +26,7 @@ func _on_Load_pressed():
 func _on_Easy_pressed():
 	start_game()
 func _on_Hard_pressed():
-	PROGRESS.data.choosen_difficulty = 1
+	PROGRESS.data.chosen_difficulty = 1
 	start_game()
 
 func start_game():
