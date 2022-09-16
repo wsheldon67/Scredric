@@ -22,3 +22,12 @@ func add_player():
 	# Add Player to Camera
 	var camera = get_node("/root/Main/MultiCamera")
 	camera.add_target(player)
+
+func get_closest_player(target_position):
+	var players = get_tree().get_nodes_in_group("players")
+	var closest = players[0]
+	for player in players:
+		if player.position.distance_to(target_position) < closest.position.distance_to(target_position):
+			closest = player
+	
+	return closest
