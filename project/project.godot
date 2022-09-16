@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 MENU="*res://global/MENU.gd"
 PROGRESS="*res://global/PROGRESS.gd"
 WORLD="*res://global/WORLD.gd"
+CONFIG="*res://global/CONFIG.gd"
 
 [display]
 
