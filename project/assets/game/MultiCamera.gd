@@ -2,7 +2,7 @@ extends Camera2D
 
 export var move_speed = 0.5
 export var zoom_speed = 0.05
-export var min_zoom = 1.5
+export var min_zoom = 0.5
 export var max_zoom = 5
 export var margin = Vector2(400, 200)
 
