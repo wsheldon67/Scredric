@@ -46,3 +46,4 @@ text = "Quit"
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
