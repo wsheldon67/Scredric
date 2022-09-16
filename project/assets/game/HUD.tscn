@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://global/HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/game/PlayerHUD.tscn" type="PackedScene" id=2]
 
-[node name="HUD" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="HUD" type="CanvasLayer"]
+visible = false
 script = ExtResource( 1 )
+
+[node name="PlayerHUD1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 94, 536 )
+
+[node name="PlayerHUD2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 334, 537 )
+player_number = 2
+
+[node name="PlayerHUD3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 578, 537 )
+player_number = 3
+
+[node name="PlayerHUD4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 834, 536 )
+player_number = 4

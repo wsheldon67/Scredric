@@ -14,6 +14,8 @@ func _change_menu(menu_name):
 
 func hide():
 	menu_parent.get_child(0).visible = false
+	HUD.show()
 
 func show():
 	menu_parent.get_child(0).visible = true
+	HUD.hide()

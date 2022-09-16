@@ -23,7 +23,7 @@ pause_mode = 1
 
 [node name="Players" type="Node" parent="World"]
 
-[node name="HUD" parent="World" instance=ExtResource( 5 )]
-
 [node name="MultiCamera" parent="." instance=ExtResource( 4 )]
 current = true
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]

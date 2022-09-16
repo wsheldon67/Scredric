@@ -13,7 +13,7 @@ var initial = {
 		"extra_health": 0
 	}
 }
-var data = initial
+var data = initial.duplicate()
 
 func save():
 	var save_game = File.new()
@@ -27,4 +27,4 @@ func get_difficulty():
 
 func unlock(unlock_type, unlock_name, level):
 	data[unlock_type][unlock_name] = level
-	HUD.unlock(unlock_type, unlock_name, level)
+	HUD.unlock(unlock_name, level)

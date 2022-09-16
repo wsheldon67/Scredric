@@ -4,6 +4,8 @@ func change_level(level_name):
 	call_deferred("_change_level", level_name)
 
 func _change_level(level_name):
+	# Reset HUD
+	HUD.reset()
 	var level_parent = get_node("/root/Main/World/Level")
 	# Delete existing level
 	level_parent.remove_child(level_parent.get_child(0))
