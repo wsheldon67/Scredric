@@ -45,3 +45,4 @@ custom_fonts/font = SubResource( 1 )
 text = "Quit"
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
