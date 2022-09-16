@@ -34,6 +34,43 @@ margin_right = 142.0
 margin_bottom = 54.0
 text = "Hard"
 
+[node name="Confirm" type="ColorRect" parent="."]
+visible = false
+margin_left = -188.0
+margin_top = -85.0
+margin_right = 196.0
+margin_bottom = 107.0
+color = Color( 0.172549, 0.172549, 0.172549, 0.921569 )
+
+[node name="Overwrite" type="Button" parent="Confirm"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -43.0
+text = "OVERWRITE"
+
+[node name="Back" type="Button" parent="Confirm"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -43.0
+margin_right = 87.0
+text = "Back"
+
+[node name="Label" type="Label" parent="Confirm"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 377.0
+margin_bottom = 153.0
+text = "WARNING!
+Starting a new game
+will delete your existing
+save file."
+align = 1
+
 [connection signal="pressed" from="Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="Easy" to="." method="_on_Easy_pressed"]
 [connection signal="pressed" from="Hard" to="." method="_on_Hard_pressed"]
+[connection signal="pressed" from="Confirm/Overwrite" to="." method="do_it"]
+[connection signal="pressed" from="Confirm/Back" to="." method="_on_Back_pressed"]
