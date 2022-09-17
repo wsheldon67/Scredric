@@ -71,3 +71,5 @@ func restart_level():
 	
 	# reload level
 	change_level(PROGRESS.data.current_level)
+	# FIXME death retry goes to level 2
+	# only happens when running a loaded game
