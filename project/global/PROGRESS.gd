@@ -28,3 +28,8 @@ func get_difficulty():
 func unlock(unlock_type, unlock_name, level):
 	data[unlock_type][unlock_name] = level
 	HUD.unlock(unlock_name, level)
+
+
+func reset_players():
+	for player in get_tree().get_nodes_in_group("players"):
+		player.reset_stats()
