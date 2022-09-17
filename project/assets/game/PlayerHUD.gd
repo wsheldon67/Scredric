@@ -6,7 +6,7 @@ var max_health = 3
 var health = 3
 
 func _ready():
-	$Label.text = str(player_number)
+	$Label.text = "Player" + str(player_number)
 
 
 func hide_if_no_player():
