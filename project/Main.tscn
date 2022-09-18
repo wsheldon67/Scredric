@@ -27,3 +27,4 @@ pause_mode = 1
 current = true
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
+visible = false

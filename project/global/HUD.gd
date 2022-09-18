@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var curr_weapons = ["", "", "", ""]
+
 func reset():
 	reset_unlocks()
 	reset_players()
@@ -28,7 +30,7 @@ func reset_player_hud():
 
 func set_health(player_number, health):
 	# update player health
-	var player_node = get_node("/root/Main/HUD/PlayerHUD" + str(player_number))
+	var player_node = get_node("/root/Main/HUD/Players/PlayerHUD" + str(player_number))
 	player_node.set_health(health)
 
 
@@ -43,6 +45,16 @@ func unlock(unlock_name, unlock_level):
 	else:
 		unlock_node = get_node(unlock_name)
 	unlock_node.set_level(unlock_level)
+
+
+func change_weapon(weapon_name, player_number):
+	print(weapon_name)
+	var weapon_ui = get_node("/root/Main/HUD/Hotbar/%s" % weapon_name)
+	weapon_ui.set_player(player_number)
+	var old_weapon = get_node("Hotbar/%s" % curr_weapons[player_number-1])
+	if old_weapon:
+		old_weapon.remove_player(player_number)
+	curr_weapons[player_number - 1] = weapon_name
 
 
 func show():

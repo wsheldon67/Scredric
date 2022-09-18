@@ -11,6 +11,9 @@ var gravity = 1200
 var max_health = 3
 var health = 3
 
+# weapon
+var current_weapon = ""
+
 # function
 var vel = Vector2()
 var dead = false
@@ -87,4 +90,11 @@ func revive():
 	spawn_timer = starting_spawn_timer
 	health = max_health
 	dead = false
-	
+
+
+func change_weapon(new_weapon):
+	HUD.change_weapon(new_weapon, player_number)
+
+func _input(event):
+	if event.is_action_pressed("Pistol_" + str(player_number)):
+		change_weapon("Pistol")

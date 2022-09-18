@@ -73,3 +73,9 @@ func restart_level():
 	change_level(PROGRESS.data.current_level)
 	# FIXME death retry goes to level 2
 	# only happens when running a loaded game
+
+
+func get_player(player_number):
+	var player_parent = get_node("/root/Main/World/Players")
+	if player_parent.has_child("Player" + str(player_number)):
+		return get_node("/root/Main/World/Players/Player" + str(player_number))

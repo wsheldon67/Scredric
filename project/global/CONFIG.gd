@@ -2,6 +2,8 @@ extends Node
 
 onready var config = ConfigFile.new()
 
+var player_colors = ["ff0000", "00ff00", "0000ff", "ff00ff"]
+
 func _ready():
 	load_config()
 
