@@ -14,4 +14,5 @@ func unlock():
 	PROGRESS.unlock(unlock_type, unlock_name, level)
 	$Cage.queue_free()
 	$GunSprite.queue_free()
+	$CollisionShape2D.queue_free()
 	# maybe some hotbar stuff

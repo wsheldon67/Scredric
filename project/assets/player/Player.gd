@@ -92,9 +92,16 @@ func revive():
 	dead = false
 
 
-func change_weapon(new_weapon):
-	HUD.change_weapon(new_weapon, player_number)
+func change_weapon(weapon_name):
+	HUD.change_weapon(weapon_name, player_number)
+	if PROGRESS.data.weapons[weapon_name] > 0:
+		# remove existing weapons
+		for player_weapon in $Weapons.get_children():
+			player_weapon.queue_free()
+		# add new weapon
+		var new_weapon = ResourceLoader.load("res://assets/game_entities/weapons/"+weapon_name+".tscn").instance()
+		$Weapons.add_child(new_weapon)
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("Pistol_" + str(player_number)):
 		change_weapon("Pistol")

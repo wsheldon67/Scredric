@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 
 [node name="Cage" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
