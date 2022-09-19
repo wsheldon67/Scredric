@@ -29,3 +29,6 @@ func _on_RedStar_body_entered(body):
 	if body.is_in_group("players"):
 		body.take_hit(damage)
 		$AnimationPlayer.queue("Attack")
+	elif body.is_in_group("projectiles"):
+		take_hit(body.damage)
+		body.queue_free()
