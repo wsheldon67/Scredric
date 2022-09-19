@@ -15,7 +15,7 @@ func _ready():
 	$Timer.wait_time = rate_of_fire
 	$Cooldown.wait_time = rate_of_fire
 
-func _process(event):
+func _process(_event):
 	if Input.is_action_pressed("shoot_left_"+n) or Input.is_action_pressed("shoot_right_"+n) or Input.is_action_pressed("shoot_up_"+n) or Input.is_action_pressed("shoot_down_"+n):
 		if !shooting:
 			start_shooting()
