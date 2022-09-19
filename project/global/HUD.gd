@@ -35,15 +35,7 @@ func set_health(player_number, health):
 
 
 func unlock(unlock_name, unlock_level):
-	if unlock_level == 0:
-		return
-	var unlock_node
-	if !has_node(unlock_name):
-		var path = "res://assets/game/hotbar/%s.tscn" % unlock_name
-		unlock_node = ResourceLoader.load(path).instance()
-		add_child(unlock_node)
-	else:
-		unlock_node = get_node(unlock_name)
+	var unlock_node = get_node("/root/Main/HUD/Hotbar/%s" % unlock_name)
 	unlock_node.set_level(unlock_level)
 
 

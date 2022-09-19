@@ -93,8 +93,9 @@ func revive():
 
 
 func change_weapon(weapon_name):
-	HUD.change_weapon(weapon_name, player_number)
 	if PROGRESS.data.weapons[weapon_name] > 0:
+		# change HUD
+		HUD.change_weapon(weapon_name, player_number)
 		# remove existing weapons
 		for player_weapon in $Weapons.get_children():
 			player_weapon.queue_free()
