@@ -23,6 +23,6 @@ func _ready():
 func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
-		if collision.collider.is_in_group("Enemy"):
+		if collision.collider.is_in_group("enemies"):
 			collision.collider.take_hit(damage)
 		queue_free()
