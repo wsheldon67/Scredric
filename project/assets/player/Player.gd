@@ -18,12 +18,14 @@ var current_weapon = ""
 var vel = Vector2()
 var dead = false
 var spawn_increase = 5
-var starting_spawn_timer = 5
-var spawn_timer = starting_spawn_timer
+var initial_spawn_timer = 5
+var starting_spawn_timer = initial_spawn_timer
+var spawn_timer = initial_spawn_timer
 
 func reset_stats():
 	health = max_health
-
+	starting_spawn_timer = initial_spawn_timer
+	revive()
 
 func take_hit(damage):
 	health -= damage
@@ -81,12 +83,12 @@ func _on_RespawnTimer_timeout():
 	$RespawnDisplay.text = str(spawn_timer)
 	spawn_timer -= 1
 	if spawn_timer < 0:
+		starting_spawn_timer += spawn_increase
 		revive()
 
 func revive():
 	$RespawnDisplay.visible = false
 	$RespawnTimer.stop()
-	starting_spawn_timer += spawn_increase
 	spawn_timer = starting_spawn_timer
 	health = max_health
 	dead = false
@@ -106,3 +108,9 @@ func change_weapon(weapon_name):
 func _unhandled_input(event):
 	if event.is_action_pressed("Pistol_" + str(player_number)):
 		change_weapon("Pistol")
+
+
+func remove_player():
+	var m_camera = get_node("/root/Main/MultiCamera")
+	m_camera.remove_target(self)
+	queue_free()

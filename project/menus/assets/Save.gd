@@ -40,7 +40,7 @@ func _on_Hard_pressed():
 
 func start_game():
 	PROGRESS.save_slot = save_number
-	PROGRESS.data = PROGRESS.initial
+	PROGRESS.data = PROGRESS.initial.duplicate()
 	PROGRESS.save()
 	MENU.hide()
 	WORLD.change_level("Level 1")

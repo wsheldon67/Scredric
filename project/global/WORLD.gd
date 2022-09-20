@@ -79,3 +79,16 @@ func get_player(player_number):
 	var player_parent = get_node("/root/Main/World/Players")
 	if player_parent.has_child("Player" + str(player_number)):
 		return get_node("/root/Main/World/Players/Player" + str(player_number))
+
+func call_function_on_player(player_number, func_name):
+	var player_parent = get_node("/root/Main/World/Players")
+	if player_parent.has_child("Player" + str(player_number)):
+		var player = get_node("/root/Main/World/Players/Player" + str(player_number))
+		player.call(func_name)
+
+
+func quit_to_start():
+	for player in get_tree().get_nodes_in_group("players"):
+		player.remove_player()
+	MENU.change_menu("StartMenu")
+	change_level("Title")
