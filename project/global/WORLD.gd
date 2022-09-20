@@ -6,6 +6,9 @@ func change_level(level_name):
 func _change_level(level_name):
 	# Reset HUD
 	HUD.reset()
+	# Reset players
+	for player in get_tree().get_nodes_in_group("players"):
+		player.reset_stats()
 	var level_parent = get_node("/root/Main/World/Level")
 	# Delete existing level
 	level_parent.remove_child(level_parent.get_child(0))
