@@ -44,4 +44,8 @@ text = "5"
 
 [node name="Weapons" type="Node2D" parent="."]
 
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]

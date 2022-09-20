@@ -5,7 +5,7 @@ var damage = 1
 export var speed_mod = 1
 export var direction = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !active:
 		return
 	var player_position = position
@@ -15,20 +15,10 @@ func _physics_process(delta):
 	else:
 		return
 	var m = direction * speed_mod
-	if player_position.x > position.x:
-		position.x += speed * delta * m
-	else:
-		position.x -= speed * delta * m
-	if player_position.y > position.y:
-		position.y += speed * delta * m
-	else:
-		position.y -= speed * delta * m
-
-
-func _on_RedStar_body_entered(body):
-	if body.is_in_group("players"):
-		body.take_hit(damage)
-		$AnimationPlayer.queue("Attack")
-	elif body.is_in_group("projectiles"):
-		take_hit(body.damage)
-		body.queue_free()
+	var heading = player_position - position
+	var collision = move_and_collide(m * heading.normalized())
+	if collision:
+		var body = collision.collider
+		if body.is_in_group("players"):
+			body.take_hit(damage)
+			$AnimationPlayer.queue("Attack")

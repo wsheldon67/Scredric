@@ -15,13 +15,16 @@ var health = 3
 # weapon
 var current_weapon = ""
 
-# function
-var vel = Vector2()
+# death
 var dead = false
 var spawn_increase = 5
 var initial_spawn_timer = 5
 var starting_spawn_timer = initial_spawn_timer
 var spawn_timer = initial_spawn_timer
+
+# function
+var vel = Vector2()
+
 
 func reset_stats():
 	health = max_health
@@ -29,6 +32,9 @@ func reset_stats():
 	revive()
 
 func take_hit(damage):
+	if $DamageCooldown.time_left > 0:
+		return
+	$DamageCooldown.start()
 	health -= damage
 	HUD.set_health(player_number, health)
 	if health <= 0:

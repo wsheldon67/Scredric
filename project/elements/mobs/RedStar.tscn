@@ -68,7 +68,7 @@ tracks/1/keys = {
 "values": [ 1 ]
 }
 
-[node name="RedStar" type="Area2D"]
+[node name="RedStar" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 11
 script = ExtResource( 2 )
@@ -82,5 +82,3 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 4 )
 anims/RESET = SubResource( 5 )
-
-[connection signal="body_entered" from="." to="." method="_on_RedStar_body_entered"]
