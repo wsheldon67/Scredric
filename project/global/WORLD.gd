@@ -4,11 +4,12 @@ func change_level(level_name):
 	call_deferred("_change_level", level_name)
 
 func _change_level(level_name):
-	# Reset HUD
-	HUD.reset()
 	# Reset players
 	for player in get_tree().get_nodes_in_group("players"):
 		player.reset_stats()
+	
+	# Reset HUD
+	HUD.reset()
 		
 	var level_parent = get_node("/root/Main/World/Level")
 	# Delete existing level
@@ -64,9 +65,6 @@ func restart_level():
 		PROGRESS.data = save_data
 	else:
 		PROGRESS.data = PROGRESS.initial
-	
-	# reset HUD
-	HUD.reset()
 	
 	# reload level
 	change_level(PROGRESS.data.current_level)

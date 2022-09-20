@@ -6,3 +6,8 @@ Inherited scene? Attach new script that extends/inherits parent script
 ** Node Creation
 Set collision layers off the bat
 Use groups
+
+* Changing Levels
+Reset players
+Reload HUD
+Reload level
