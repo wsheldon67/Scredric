@@ -40,12 +40,14 @@ func unlock(unlock_name, unlock_level):
 
 
 func change_weapon(weapon_name, player_number):
-	print(weapon_name)
-	var weapon_ui = get_node("/root/Main/HUD/Hotbar/%s" % weapon_name)
-	weapon_ui.set_player(player_number)
+	# remove current weapon, if any
 	if curr_weapons[player_number-1]:
 		var old_weapon = get_node("/root/Main/HUD/Hotbar/%s" % curr_weapons[player_number-1])
 		old_weapon.remove_player(player_number)
+	# add weapon
+	var weapon_ui = get_node("/root/Main/HUD/Hotbar/%s" % weapon_name)
+	weapon_ui.set_player(player_number)
+	# record for later removal
 	curr_weapons[player_number - 1] = weapon_name
 
 
