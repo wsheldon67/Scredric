@@ -6,6 +6,7 @@ export var player_number:int = 1
 var speed = 200
 var jump_force = 640
 var gravity = 1200
+var wall_jump = true
 
 # stats
 var max_health = 3
@@ -35,7 +36,7 @@ func take_hit(damage):
 
 
 func die():
-	# TODO make dead sprite
+	$AnimatedSprite.play("dead")
 	dead = true
 	if all_players_are_dead():
 		WORLD.game_over()
@@ -68,7 +69,9 @@ func _physics_process(delta):
 	vel.y += gravity * delta
 	
 	# jump input
-	if Input.is_action_pressed("jump_" + str(player_number)) and is_on_floor():
+	var peaked = vel.y - jump_force > - gravity
+	var jumpable_surface = is_on_floor() or (is_on_wall() and wall_jump)
+	if Input.is_action_pressed("jump_" + str(player_number)) and jumpable_surface and peaked:
 		vel.y -= jump_force
 		# TODO partial jumps
 		# TODO wall jumps
@@ -91,6 +94,7 @@ func revive():
 	$RespawnTimer.stop()
 	spawn_timer = starting_spawn_timer
 	health = max_health
+	$AnimatedSprite.play("default")
 	dead = false
 
 
