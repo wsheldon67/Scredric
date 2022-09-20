@@ -16,5 +16,3 @@ func _on_player_added(player_number):
 
 func _on_Ready_pressed():
 	MENU.change_menu("SelectSave")
-
-# FIXME same session new game still has old players
