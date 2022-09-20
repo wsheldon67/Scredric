@@ -9,6 +9,7 @@ func _change_level(level_name):
 	# Reset players
 	for player in get_tree().get_nodes_in_group("players"):
 		player.reset_stats()
+		
 	var level_parent = get_node("/root/Main/World/Level")
 	# Delete existing level
 	level_parent.remove_child(level_parent.get_child(0))
@@ -63,11 +64,6 @@ func restart_level():
 		PROGRESS.data = save_data
 	else:
 		PROGRESS.data = PROGRESS.initial
-	
-	# reset players
-	for player in get_tree().get_nodes_in_group("players"):
-		player.reset_stats()
-		player.dead = false
 	
 	# reset HUD
 	HUD.reset()
