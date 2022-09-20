@@ -74,7 +74,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("jump_" + str(player_number)) and jumpable_surface and peaked:
 		vel.y -= jump_force
 		# TODO partial jumps
-		# TODO wall jumps
 	
 	# flip sprite
 	if vel.x < 0:
