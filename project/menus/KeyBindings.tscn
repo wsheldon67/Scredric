@@ -52,5 +52,10 @@ position = Vector2( 335, 319 )
 label = "Shoot Down"
 input_map_action = "shoot_down_"
 
+[node name="Pistol" parent="." instance=ExtResource( 2 )]
+position = Vector2( 646, 99 )
+label = "Pistol"
+input_map_action = "Pistol_"
+
 [connection signal="player_selected" from="PlayerSelect" to="." method="_on_PlayerSelect_player_selected"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
