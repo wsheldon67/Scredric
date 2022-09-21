@@ -26,8 +26,9 @@ func get_difficulty():
 
 
 func unlock(unlock_type, unlock_name, level):
-	data[unlock_type][unlock_name] = level
-	HUD.unlock(unlock_name, level)
+	var new_level = min(data[unlock_type][unlock_name], level)
+	data[unlock_type][unlock_name] = new_level
+	HUD.unlock(unlock_name, new_level)
 
 
 func reset_players():
