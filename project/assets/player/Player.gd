@@ -26,6 +26,11 @@ var spawn_timer = initial_spawn_timer
 var vel = Vector2()
 
 
+func _ready():
+	
+	modulate = CONFIG.player_colors[player_number-1]
+
+
 func reset_stats():
 	health = max_health
 	starting_spawn_timer = initial_spawn_timer

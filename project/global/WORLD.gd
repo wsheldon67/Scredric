@@ -24,8 +24,8 @@ func add_player():
 	# Add Player to World
 	var player = ResourceLoader.load("res://assets/player/Player.tscn").instance()
 	var player_parent = get_node("/root/Main/World/Players")
+	player.player_number = player_parent.get_child_count() + 1
 	player_parent.add_child(player)
-	player.player_number = player_parent.get_child_count()
 	
 	# Add Player to Camera
 	var camera = get_node("/root/Main/MultiCamera")
