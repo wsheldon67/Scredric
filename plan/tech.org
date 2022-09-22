@@ -11,3 +11,19 @@ Use groups
 Reset players
 Reload HUD
 Reload level
+
+
+* Creating Weapons
+  ** Steps Needed
+  1. Create weapon/behavior in weapons
+   - Single animated texture has mk1 and mk2
+  2. Create unlockable in elements
+   - utilizes the animated texture already created
+  ** WeaponList
+    uses Directory to scan for weapons
+    positions weapons in a row
+    *** API
+      var disabled
+      Signal weapon_pressed(weapon_name)
+      func set_player(weapon_name, player_number)
+    
