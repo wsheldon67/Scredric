@@ -1,5 +1,9 @@
 extends Node
 
+var combinators = {
+	"Pistol": []
+}
+
 func change_level(level_name):
 	call_deferred("_change_level", level_name)
 
@@ -17,6 +21,8 @@ func _change_level(level_name):
 	# Load new level
 	var new_level = ResourceLoader.load("res://levels/%s.tscn" % level_name).instance()
 	level_parent.add_child(new_level)
+	
+	# TODO combinator menu
 
 
 func add_player():

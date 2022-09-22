@@ -19,11 +19,12 @@ animations = [ {
 
 [node name="Unlockable" type="Area2D"]
 script = ExtResource( 1 )
+level = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="GunSprite" type="Sprite" parent="."]
+[node name="GunSprite" type="AnimatedSprite" parent="."]
 
 [node name="Cage" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )

@@ -6,7 +6,8 @@ var initial = {
 	"current_level": "Level 1",
 	"chosen_difficulty": 0,
 	"weapons": {
-		"Pistol": 0
+		"Pistol": 0,
+		"Spread": 0
 	},
 	"unlocks": {
 		"combinator": 0,
@@ -26,9 +27,10 @@ func get_difficulty():
 
 
 func unlock(unlock_type, unlock_name, level):
-	var new_level = min(data[unlock_type][unlock_name], level)
+	var new_level = max(data[unlock_type][unlock_name], level)
 	data[unlock_type][unlock_name] = new_level
-	HUD.unlock(unlock_name, new_level)
+	if unlock_type == "weapons":
+		HUD.unlock(unlock_name, new_level)
 
 
 func reset_players():

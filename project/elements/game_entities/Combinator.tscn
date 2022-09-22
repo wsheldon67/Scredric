@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/game_entities/Unlockable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/game_entities/Combinator1.png" type="Texture" id=2]
+[ext_resource path="res://assets/game_entities/Combinator2.png" type="Texture" id=3]
+[ext_resource path="res://assets/game_entities/Combinator3.png" type="Texture" id=4]
+[ext_resource path="res://assets/game_entities/Combinator4.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Combinator" instance=ExtResource( 1 )]
+unlock_type = "unlocks"
+unlock_name = "combinator"
+
+[node name="GunSprite" parent="." index="1"]
+frames = SubResource( 1 )
+frame = 3
+playing = true

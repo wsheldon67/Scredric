@@ -13,7 +13,7 @@ func remove_player(player_number):
 	player_tab.visible = false
 
 func set_level(level):
-	print("set ", weapon_name, " level ", level)
+	print(weapon_name, level)
 	if level == 0:
 		visible = false
 	elif level == 1:
