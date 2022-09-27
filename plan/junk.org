@@ -1,3 +1,28 @@
 * Load a game
 Load progress somewhere
 load level
+
+
+This is the scene tree:
+Main
+  Menu
+  World - progress, combinators
+    Hotbar
+    Players
+      Player
+        HUD
+        Weapon
+    Level
+      Unlocks
+      Mobs
+      TileMap
+      PlayerStart
+      LevelEnd
+
+Signal upwards to common ancestors
+
+* Menu
+  setget menu_name
+  visible
+
+the current issue that i need the thing on the combinator

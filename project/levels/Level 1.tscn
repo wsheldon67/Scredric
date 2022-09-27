@@ -34,11 +34,11 @@ position = Vector2( 313, 72 )
 position = Vector2( 1212, 131 )
 min_difficulty = 2
 
-[node name="Combinator" parent="." instance=ExtResource( 5 )]
-position = Vector2( 561, 271 )
-
 [node name="Pistol2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 632, 272 )
+position = Vector2( 533, 272 )
+
+[node name="Combinator" parent="." instance=ExtResource( 5 )]
+position = Vector2( 627, 272 )
 
 [node name="Spread" parent="." instance=ExtResource( 7 )]
-position = Vector2( 879, 208 )
+position = Vector2( 869, 207 )

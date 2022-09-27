@@ -1,11 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://global/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/game/PlayerHUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/game_entities/weapons/Pistol.png" type="Texture" id=3]
-[ext_resource path="res://assets/game/HotbarItem.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/game_entities/weapons/Pistol2.png" type="Texture" id=5]
-[ext_resource path="res://assets/game_entities/weapons/Spread.png" type="Texture" id=6]
+[ext_resource path="res://assets/game_entities/WeaponList.tscn" type="PackedScene" id=3]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -27,14 +24,5 @@ player_number = 3
 position = Vector2( 834, 536 )
 player_number = 4
 
-[node name="Hotbar" type="Node2D" parent="."]
-
-[node name="Pistol" parent="Hotbar" instance=ExtResource( 4 )]
-position = Vector2( 30, 30 )
-mk1_texture = ExtResource( 3 )
-mk2_texture = ExtResource( 5 )
-
-[node name="Spread" parent="Hotbar" instance=ExtResource( 4 )]
-position = Vector2( 85, 31 )
-weapon_name = "Spread"
-mk1_texture = ExtResource( 6 )
+[node name="WeaponList" parent="." instance=ExtResource( 3 )]
+position = Vector2( 20, 23 )

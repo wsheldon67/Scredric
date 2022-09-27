@@ -15,15 +15,38 @@ Reload level
 
 * Creating Weapons
   ** Steps Needed
-  1. Create weapon/behavior in weapons
-   - Single animated texture has mk1 and mk2
-  2. Create unlockable in elements
-   - utilizes the animated texture already created
+    1. Create weapon/behavior in weapons
+    2. Create unlockable in elements
   ** WeaponList
     uses Directory to scan for weapons
     positions weapons in a row
+    checks for level / combinated
     *** API
       var disabled
       Signal weapon_pressed(weapon_name)
       func set_player(weapon_name, player_number)
-    
+
+
+* Progress vs Temp State
+** PROGRESS
+  var current_level
+  var choosen_difficulty = 0
+  var weapons = {}
+  var unlocks = {}
+
+  Use getters & setters for side effects of changing these
+  save func compiles & saves
+  load func unpacks & sets
+
+** LEVEL STATE
+  var combinators = {}
+  level stats
+** PLAYER STATE
+  movement
+  stats
+  weapon
+  death
+** ADMIN
+  level
+  menu
+  

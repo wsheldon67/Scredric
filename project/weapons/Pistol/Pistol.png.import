@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PistolBullet.png-a2a9e281d86fb1097950818eb2e010ec.stex"
+path="res://.import/Pistol.png-9b24956559aaa3df715bc6bcc25acc1d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game_entities/weapons/projectiles/PistolBullet.png"
-dest_files=[ "res://.import/PistolBullet.png-a2a9e281d86fb1097950818eb2e010ec.stex" ]
+source_file="res://weapons/Pistol/Pistol.png"
+dest_files=[ "res://.import/Pistol.png-9b24956559aaa3df715bc6bcc25acc1d.stex" ]
 
 [params]
 

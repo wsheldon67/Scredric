@@ -35,8 +35,7 @@ func set_health(player_number, health):
 
 
 func unlock(unlock_name, unlock_level):
-	var unlock_node = get_node("/root/Main/HUD/Hotbar/%s" % unlock_name)
-	unlock_node.set_level(unlock_level)
+	$WeaponList.set_level(unlock_level)
 
 
 func change_weapon(weapon_name, player_number):
